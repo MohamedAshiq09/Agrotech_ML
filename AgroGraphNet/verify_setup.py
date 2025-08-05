@@ -25,12 +25,23 @@ def check_json_file(file_path, description):
         return False
     
     try:
-        with open(file_path, 'r') as f:
-            json.load(f)
-        print(f"✅ {description}: {file_path}")
-        return True
-    except json.JSONDecodeError:
-        print(f"❌ {description}: {file_path} - INVALID JSON")
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        # Additional check for Jupyter notebook structure
+        if 'cells' in data and 'metadata' in data:
+            print(f"✅ {description}: {file_path}")
+            return True
+        else:
+            print(f"❌ {description}: {file_path} - NOT A VALID NOTEBOOK")
+            return False
+    except json.JSONDecodeError as e:
+        print(f"❌ {description}: {file_path} - INVALID JSON: {str(e)}")
+        return False
+    except UnicodeDecodeError:
+        print(f"❌ {description}: {file_path} - ENCODING ERROR")
+        return False
+    except Exception as e:
+        print(f"❌ {description}: {file_path} - ERROR: {str(e)}")
         return False
 
 def main():
