@@ -94,14 +94,21 @@ class Trainer:
         data = data.to(self.device)
         
         # Create model
+        model_kwargs = {
+            'num_layers': self.config.model.num_layers,
+            'dropout': self.config.model.dropout
+        }
+        
+        # Add num_heads only for GAT models
+        if model_type == 'gat':
+            model_kwargs['num_heads'] = self.config.model.num_heads
+        
         model = create_model(
             model_type=model_type,
             input_dim=data.x.shape[1],
             hidden_dim=self.config.model.hidden_dim,
             output_dim=len(self.config.disease_classes),
-            num_layers=self.config.model.num_layers,
-            dropout=self.config.model.dropout,
-            num_heads=self.config.model.num_heads if model_type == 'gat' else None
+            **model_kwargs
         )
         
         model = model.to(self.device)
@@ -115,7 +122,7 @@ class Trainer:
         val_accuracies = []
         best_val_acc = 0
         patience_counter = 0
-        best_model_state = None
+        best_model_state = model.state_dict().copy()  # Initialize with current state
         
         self.logger.info(f"Training on {self.device} for {self.config.training.epochs} epochs")
         
@@ -197,15 +204,18 @@ class Trainer:
             
             # Classification report
             class_names = list(self.config.disease_classes.values())
+            class_labels = list(self.config.disease_classes.keys())
             report = classification_report(
                 test_labels_np, test_pred_np,
+                labels=class_labels,
                 target_names=class_names,
                 output_dict=True,
                 zero_division=0
             )
             
             # Confusion matrix
-            cm = confusion_matrix(test_labels_np, test_pred_np)
+            class_labels = list(self.config.disease_classes.keys())
+            cm = confusion_matrix(test_labels_np, test_pred_np, labels=class_labels)
             
             return {
                 'accuracy': accuracy,

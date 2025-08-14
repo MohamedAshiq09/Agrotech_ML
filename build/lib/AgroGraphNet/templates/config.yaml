@@ -1,0 +1,43 @@
+# AgroGraphNet Configuration File
+
+data:
+  raw_path: "data/raw"
+  processed_path: "data/processed"
+  graph_path: "data/graphs"
+  labels_path: "data/labels"
+
+model:
+  hidden_dim: 64
+  num_layers: 3
+  dropout: 0.2
+  learning_rate: 0.001
+  num_heads: 4  # For GAT models
+
+training:
+  epochs: 100
+  batch_size: 32
+  validation_split: 0.2
+  early_stopping: 10
+  use_gpu: false
+  random_seed: 42
+
+graph:
+  distance_threshold_km: 5.0
+  min_neighbors: 2
+  max_neighbors: 10
+  edge_features:
+    - "distance"
+    - "elevation_diff"
+    - "weather_similarity"
+
+paths:
+  models: "models"
+  results: "results"
+  logs: "logs"
+
+disease_classes:
+  0: "Healthy"
+  1: "Blight"
+  2: "Rust"
+  3: "Mosaic"
+  4: "Bacterial"
