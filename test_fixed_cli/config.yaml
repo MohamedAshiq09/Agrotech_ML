@@ -1,0 +1,36 @@
+data:
+  graph_path: data/graphs
+  labels_path: data/labels
+  processed_path: data/processed
+  raw_path: data/raw
+disease_classes:
+  0: Healthy
+  1: Blight
+  2: Rust
+  3: Mosaic
+  4: Bacterial
+graph:
+  distance_threshold_km: 5.0
+  edge_features:
+  - distance
+  - elevation_diff
+  - weather_similarity
+  max_neighbors: 10
+  min_neighbors: 2
+model:
+  dropout: 0.2
+  hidden_dim: 64
+  learning_rate: 0.001
+  num_heads: 4
+  num_layers: 3
+paths:
+  logs: logs
+  models: models
+  results: results
+training:
+  batch_size: 32
+  early_stopping: 10
+  epochs: 100
+  random_seed: 42
+  use_gpu: false
+  validation_split: 0.2
