@@ -1,6 +1,9 @@
+CHANGELOG.md
 LICENSE
 MANIFEST.in
 README.md
+USER_GUIDE.md
+pypirc_example.txt
 pyproject.toml
 requirements.txt
 setup.py
@@ -72,6 +75,8 @@ AgroGraphNet/src/graph_utils.py
 AgroGraphNet/src/model_utils.py
 AgroGraphNet/src/visualization.py
 AgroGraphNet/templates/__init__.py
+AgroGraphNet/templates/config.yaml
+AgroGraphNet/templates/data_schema.json
 AgroGraphNet/utils/__init__.py
 AgroGraphNet/utils/io.py
 AgroGraphNet/utils/logger.py
@@ -85,3 +90,13 @@ agrographnet.egg-info/top_level.txt
 agrographnet/templates/__init__.py
 agrographnet/templates/config.yaml
 agrographnet/templates/data_schema.json
+dist/agrographnet-1.0.0-py3-none-any.whl
+dist/agrographnet-1.0.0.tar.gz
+dist/agrographnet-1.0.2-py3-none-any.whl
+dist/agrographnet-1.0.2.tar.gz
+scripts/build.py
+scripts/release.py
+test_fixed_cli/config.yaml
+test_project/.gitignore
+test_project/README.md
+test_project/data/README.md

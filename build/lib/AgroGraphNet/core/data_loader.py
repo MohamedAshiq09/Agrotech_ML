@@ -164,13 +164,13 @@ class DataLoader:
         feature_cols = merged_data.columns.drop(['farm_id', 'disease_type', 'severity'])
         X = merged_data[feature_cols].copy()
         
-        # Handle missing values
-        X = X.fillna(X.mean())
-        
-        # Handle categorical variables
+        # Handle categorical variables FIRST
         categorical_cols = X.select_dtypes(include=['object']).columns
         for col in categorical_cols:
             X[col] = pd.Categorical(X[col]).codes
+        
+        # Handle missing values AFTER categorical encoding
+        X = X.fillna(X.mean())
         
         self.logger.info(f"Prepared training data: {X.shape[0]} samples, {X.shape[1]} features")
         

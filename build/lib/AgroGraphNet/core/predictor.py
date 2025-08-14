@@ -34,7 +34,7 @@ class Predictor:
         self.logger.info(f"Loading model from: {model_path}")
         
         # Load model checkpoint
-        checkpoint = torch.load(model_path, map_location=self.device)
+        checkpoint = torch.load(model_path, map_location=self.device, weights_only=False)
         self.model_metadata = checkpoint
         
         # Determine model type
