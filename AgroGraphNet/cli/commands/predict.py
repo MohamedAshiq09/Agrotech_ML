@@ -6,7 +6,7 @@ from ...core.config import Config
 from ...utils.logger import setup_logger
 
 @click.command()
-@click.option('--config', '-c', type=click.Path(),
+@click.option('--config', '-c', type=str,
               default='config.yaml', help='Configuration file path')
 @click.option('--model', '-m', default='graphsage',
               type=click.Choice(['gcn', 'graphsage', 'gat']),
