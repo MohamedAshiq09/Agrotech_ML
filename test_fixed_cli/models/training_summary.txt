@@ -1,0 +1,8 @@
+AgroGraphNet Training Summary
+========================================
+
+GRAPHSAGE Model:
+  Test Accuracy: 0.5000
+  Best Val Accuracy: 0.7500
+  Training Epochs: 10
+
