@@ -1,0 +1,52 @@
+{
+  "farms": {
+    "required_columns": ["farm_id", "latitude", "longitude", "crop_type"],
+    "optional_columns": ["farm_size", "soil_type", "irrigation_type"],
+    "data_types": {
+      "farm_id": "string",
+      "latitude": "float",
+      "longitude": "float",
+      "crop_type": "string",
+      "farm_size": "float",
+      "soil_type": "string",
+      "irrigation_type": "string"
+    }
+  },
+  "weather": {
+    "required_columns": ["farm_id", "date", "temperature", "humidity", "precipitation"],
+    "optional_columns": ["wind_speed", "wind_direction", "solar_radiation"],
+    "data_types": {
+      "farm_id": "string",
+      "date": "datetime",
+      "temperature": "float",
+      "humidity": "float",
+      "precipitation": "float",
+      "wind_speed": "float",
+      "wind_direction": "float",
+      "solar_radiation": "float"
+    }
+  },
+  "satellite": {
+    "required_columns": ["farm_id", "date", "ndvi"],
+    "optional_columns": ["evi", "savi", "ndwi"],
+    "data_types": {
+      "farm_id": "string",
+      "date": "datetime",
+      "ndvi": "float",
+      "evi": "float",
+      "savi": "float",
+      "ndwi": "float"
+    }
+  },
+  "labels": {
+    "required_columns": ["farm_id", "date", "disease_type"],
+    "optional_columns": ["severity", "confidence"],
+    "data_types": {
+      "farm_id": "string",
+      "date": "datetime",
+      "disease_type": "string",
+      "severity": "float",
+      "confidence": "float"
+    }
+  }
+}
