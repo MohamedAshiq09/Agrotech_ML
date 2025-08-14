@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agrographnet"
+dynamic = ["version"]
+description = "Graph Neural Networks for Agricultural Disease Prediction"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "AgroGraphNet Team", email = "contact@agrographnet.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.21.0",
+    "pandas>=1.3.0",
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+    "scikit-learn>=1.0.0",
+    "scipy>=1.7.0",
+    "torch>=1.12.0",
+    "torch-geometric>=2.1.0",
+    "rasterio>=1.2.0",
+    "geopandas>=0.10.0",
+    "shapely>=1.8.0",
+    "fiona>=1.8.0",
+    "pyproj>=3.2.0",
+    "folium>=0.12.0",
+    "plotly>=5.0.0",
+    "networkx>=2.6.0",
+    "click>=8.0.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.62.0",
+    "requests>=2.25.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "black", "flake8", "mypy"]
+viz = ["plotly>=5.15.0", "dash>=2.0.0"]
+
+[project.scripts]
+agrographnet = "AgroGraphNet.cli.main:cli"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/agrographnet"
+Repository = "https://github.com/yourusername/agrographnet"
+Documentation = "https://agrographnet.readthedocs.io"
+
+[tool.setuptools_scm]
+write_to = "agrographnet/_version.py"
