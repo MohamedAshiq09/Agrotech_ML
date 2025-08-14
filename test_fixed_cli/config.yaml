@@ -4,11 +4,10 @@ data:
   processed_path: data/processed
   raw_path: data/raw
 disease_classes:
-  0: Healthy
-  1: Blight
-  2: Rust
-  3: Mosaic
-  4: Bacterial
+  0: healthy
+  1: blight
+  2: rust
+  3: mildew
 graph:
   distance_threshold_km: 5.0
   edge_features:

@@ -1,0 +1,4 @@
+farm_id,latitude,longitude,crop_type,area_hectares
+21,40.7200,-74.0100,corn,11.2
+22,40.7400,-73.9900,wheat,13.5
+23,40.6900,-74.0300,soybean,9.8
