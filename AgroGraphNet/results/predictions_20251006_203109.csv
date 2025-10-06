@@ -1,0 +1,11 @@
+Farm ID,Latitude,Longitude,Crop Type,Ensemble Prediction,Ensemble Confidence,GCN Prediction,GraphSAGE Prediction,GAT Prediction,Random Forest Prediction,Logistic Regression Prediction
+farm_001,40.7128,-74.006,wheat,Healthy,0.800,Healthy,Healthy,Healthy,Healthy,Mosaic
+farm_002,40.7589,-73.9851,corn,Healthy,0.800,Healthy,Healthy,Healthy,Healthy,Mosaic
+farm_003,40.7505,-73.9934,soybean,Healthy,0.800,Healthy,Healthy,Healthy,Healthy,Mosaic
+farm_004,40.7282,-73.7949,wheat,Healthy,0.800,Healthy,Healthy,Healthy,Healthy,Mosaic
+farm_005,40.7831,-73.9712,corn,Healthy,0.800,Healthy,Healthy,Healthy,Healthy,Mosaic
+farm_006,40.7589,-73.9851,wheat,Healthy,0.800,Healthy,Healthy,Healthy,Healthy,Mosaic
+farm_007,40.7128,-74.006,soybean,Healthy,0.800,Healthy,Healthy,Healthy,Healthy,Mosaic
+farm_008,40.7282,-73.7949,corn,Healthy,0.800,Healthy,Healthy,Healthy,Healthy,Mosaic
+farm_009,40.7505,-73.9934,wheat,Healthy,0.800,Healthy,Healthy,Healthy,Healthy,Mosaic
+farm_010,40.7831,-73.9712,soybean,Healthy,0.800,Healthy,Healthy,Healthy,Healthy,Mosaic
