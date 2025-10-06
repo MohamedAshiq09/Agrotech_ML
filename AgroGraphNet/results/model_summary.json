@@ -1,0 +1,24 @@
+{
+  "best_model": "GraphSAGE",
+  "best_accuracy": 0.7033333333333334,
+  "model_comparison": {
+    "Random Forest": 0.7033333333333334,
+    "SVM": 0.7033333333333334,
+    "Logistic Regression": 0.7033333333333334,
+    "GCN": 0.58,
+    "GraphSAGE": 0.7033333333333334,
+    "GAT": 0.7033333333333334
+  },
+  "training_config": {
+    "hidden_dim": 64,
+    "num_layers": 3,
+    "dropout": 0.2,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "num_epochs": 100,
+    "early_stopping_patience": 10
+  },
+  "num_graphs": 12,
+  "num_nodes": 100,
+  "node_features": 14
+}
